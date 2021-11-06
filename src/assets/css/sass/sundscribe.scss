@@ -1,0 +1,66 @@
+.subscribe-section {
+    text-align: center;
+    margin-bottom: 5em;
+    .subscribe-container {
+        width: 100%;
+        max-width: 600px + ($base-padding * 2);
+        padding: $base-padding;
+        margin: 0 auto;
+        text-align: center;
+        .vertical-line {
+            margin: 2em auto;
+        }
+        .text-light {
+            margin: 2.5em auto;
+        }
+        .input-container {
+            position: relative;
+            input {
+                width: 100%;
+                height: $input-h;
+                border: 1px solid darken($input-bg, 2%);
+                background: $input-bg;
+                border-radius: 0;
+                padding: 0 ($input-h + $base-padding) 0 $base-padding;
+                letter-spacing: 5px;
+                &::-webkit-input-placeholder {
+                    /* Edge */
+                    color: $text-dark;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10-11 */
+                    color: $text-dark;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+
+                &::placeholder {
+                    color: $text-dark;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                }
+            }
+            .btn {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: $input-h;
+                background-color: $btn-bg;
+                color: #fff;
+                font-size: $font-size-medium;
+                border-radius: 0;
+                border: 1px solid darken($btn-bg, 2%);
+                &:hover {
+                    background-color: barken($btn-bg, 10%);
+                }
+            }
+        }
+    }
+}

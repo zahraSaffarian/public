@@ -1,0 +1,91 @@
+@import "variables";
+@import "font-icon";
+@import "normalize";
+@import "layout";
+@import "slider";
+@import "shop";
+@import "article";
+@import "sundscribe";
+@import "contacts";
+
+body {
+    direction: ltr;
+    overflow-x: hidden;
+    font-size: 14px;
+    color: $text-dark;
+    background: #fff url("../../images/body-img.png") bottom center no-repeat;
+    background-size: 100% auto;
+}
+.brand-color {
+    color: $base-color;
+}
+
+.f-LeagueSpartan {
+    font-family: $font-family-LeagueSpartan;
+}
+.f-Poppins {
+    font-family: $font-family-Poppins;
+}
+.f-MyriadPro {
+    font-family: $font-family-MyriadPro;
+}
+.f-PlayfairDisplay {
+    font-family: $font-family-PlayfairDisplay;
+}
+
+.text-light {
+    color: $text-light;
+    font-size: $font-size-base;
+    @extend .f-Poppins;
+}
+.text-dark {
+    color: $text-dark;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    font-size: $font-size-x-small;
+    letter-spacing: $letter-spacing-base;
+    line-height: 150%;
+}
+
+.link {
+    color: $text-dark;
+    text-decoration-color: $base-color;
+    text-decoration-line: underline;
+    text-underline-offset: 1em;
+    margin: 2em 0;
+    display: inline-block;
+}
+
+.sub-header {
+    font-size: $font-header-h2;
+    font-family: $font-family-PlayfairDisplay;
+    color: $text-dark;
+    margin: 0;
+    line-height: 100%;
+}
+.brand-uppercase {
+    @extend .brand-color;
+    @extend .uppercase;
+    @extend .f-LeagueSpartan;
+    font-weight: bold;
+}
+
+.btn-icon {
+    border: 0;
+    background-color: transparent;
+    &:not(:disabled):hover {
+        color: $hover-text-color;
+    }
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+.rotate-90 {
+    @extend .uppercase;
+    transform: rotate(270deg);
+    position: absolute;
+    color: $text-light;
+    opacity: 0.5;
+}

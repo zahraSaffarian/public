@@ -1,0 +1,125 @@
+.main-container {
+    // background-color: rgb(142, 125, 158);
+    min-height: 100vh;
+    %nav {
+        .logo {
+            width: 20px;
+        }
+        nav {
+            a {
+                font-size: $font-size-x-small;
+                color: $text-dark;
+                @extend .uppercase;
+                font-weight: bold;
+                &:hover,
+                &:active {
+                    color: $hover-text-color;
+                }
+            }
+        }
+    }
+    header {
+        //   background-color: coral;
+        padding: $base-padding 0;
+        display: flex;
+        align-items: center;
+        @extend %nav;
+        nav {
+            a {
+                margin-right: $base-margin * 3;
+            }
+        }
+    }
+    footer {
+        @extend %nav;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 2em 5em 5em;
+        nav {
+            margin-bottom: 3em;
+            a {
+                margin: 0 $base-margin * 1.5;
+            }
+        }
+        .logo {
+            margin: 3em 0;
+        }
+    }
+}
+.social-link {
+    .icon {
+        @extend .ico-sm;
+        color: $text-light;
+        opacity: 0.2;
+        margin: 1.5em;
+        display: inline-block;
+    }
+}
+.Quote-container {
+    text-align: center;
+    .Quote {
+        margin: 5em auto 0;
+        display: flex;
+        max-width: 600px + ($base-padding * 2);
+        padding: $base-padding;
+        flex-direction: column;
+        align-items: center;
+        //max-width: 500px;
+        // margin: 5em auto;
+        text-align: center;
+        font-size: $font-size-large * 0.9;
+        .uppercase {
+            margin: 20px auto 40px;
+        }
+    }
+}
+
+.vertical-line {
+    width: 0;
+    height: 100px;
+    border-left: $border-brand;
+}
+
+.media-container {
+    margin-top: 5em;
+    margin-bottom: 5em;
+    .text-container {
+        margin: 2em auto;
+        .text-light {
+            margin: 3em 15em 3em 4em;
+            .link {
+                margin-top: 3em;
+            }
+        }
+    }
+    .video-container {
+        overflow-x: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-top: 3em;
+
+        .video {
+            width: 120%;
+        }
+    }
+}
+.right-col {
+    position: absolute;
+    right: 0;
+    .rotate-90 {
+        transform: rotate(270deg);
+        width: 300px;
+        position: absolute;
+        right: -90px;
+        margin-top: 60px;
+    }
+    .social-link {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50vh;
+        position: absolute;
+        right: 23px;
+    }
+}

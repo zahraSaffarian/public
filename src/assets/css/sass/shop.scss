@@ -1,0 +1,126 @@
+.shop-container {
+    .section-head {
+        text-align: center;
+    }
+    .shop-slider {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        .slid-btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin: 0 $base-margin;
+            padding-top: 10%;
+            .slid-btn {
+                @extend .btn-icon;
+                font-size: $font-size-large;
+                padding: $base-padding * 2;
+                color: $text-dark;
+            }
+        }
+
+        .catalog-container {
+            overflow: hidden;
+
+            .catalog-slid-container {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: space-between;
+                position: relative;
+                transition: all 3s ease-out;
+                @for $i from 1 through 50 {
+                    &.show-#{$i} {
+                        left: -($item-shop-w + ($item-shop-margin * 2)) * $i;
+                    }
+                }
+            }
+            //--------------------------------------------------------
+            @media only screen and (min-width: $md) {
+                width: ($item-shop-w + ($item-shop-margin * 2)) * 3;
+            }
+            @media only screen and (max-width: $md) {
+                width: ($item-shop-w + ($item-shop-margin * 2)) * 2;
+            }
+            @media only screen and (max-width: $sm) {
+                width: 100%;
+                max-width: ($item-shop-w + ($item-shop-margin * 2));
+            }
+            //-----------------------------------------------------
+
+            .item-container {
+                transition: all 1s ease-out;
+                width: $item-shop-w;
+                min-width: $item-shop-w;
+                height: 400px;
+                margin: 0 $base-margin $base-margin;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    z-index: 0;
+                    background-color: $gray-bg;
+                    left: 0;
+                    bottom: 0;
+                    right: 50%;
+                    top: 35%;
+                }
+                .info {
+                    z-index: 1;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    height: 100%;
+                    margin-left: 35%;
+                    margin-top: 2em;
+                    text-align: left;
+                    .brand {
+                        color: $text-light;
+                        font-size: $font-size-small;
+                        text-transform: uppercase;
+                        letter-spacing: $letter-spacing-base * 0.5;
+                    }
+                    .name {
+                        font-size: $font-size-large;
+                        font-family: $font-family-Layer;
+                        line-height: 100%;
+                        margin-bottom: $base-margin;
+                    }
+                    .price {
+                        color: $attention-color;
+                        font-size: $font-size-medium;
+                        font-family: $font-family-Poppins;
+                        margin-left: 25%;
+                    }
+                    .uppercase {
+                        margin-left: 25%;
+                        padding-left: 4px;
+                        font-weight: bold;
+                    }
+                }
+                .img-container {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    right: 50%;
+                    z-index: 0;
+                    max-width: 200px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .show-all {
+        margin: 4em 0;
+        text-align: center;
+    }
+}

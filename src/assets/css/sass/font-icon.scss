@@ -1,0 +1,57 @@
+﻿@mixin font-icon-size{
+    &.ico-xs::before{
+        font-size:16px;
+    }
+    &.ico-sm::before{
+        font-size: 21px;
+    }
+    &.ico-lg::before{
+        font-size: 32px;
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../fonts/icon/icomoon.eot');
+     src: url('../../fonts/icon/icomoon.woff') format('woff'),
+      url('../../fonts/icon/icomoon.ttf') format('truetype'),
+      url('../../fonts/icon/icomoon.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+[class^="icon-"]::before, [class*=" icon-"]::before {
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+[class^="icon-"], [class*=" icon-"]{
+    @include font-icon-size;
+
+}
+
+.icon-chevron-left:before {
+    content: "\e900";
+  }
+  .icon-chevron-right:before {
+    content: "\e901";
+  }
+  .icon-twitter:before {
+    content: "\ea96";
+  }
+  .icon-vimeo:before {
+    content: "\eaa0";
+  }
+  .icon-tumblr:before {
+    content: "\eab9";
+  }
+  
